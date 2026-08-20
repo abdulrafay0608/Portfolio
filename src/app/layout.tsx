@@ -13,9 +13,7 @@ export const metadata: Metadata = {
   title: "Abdul Rafay | AI Engineer & Full Stack MERN Developer",
   description:
     "Portfolio of Abdul Rafay — AI Engineer and Full Stack MERN Developer building modern web applications and AI-powered solutions.",
-  icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-  },
+
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
