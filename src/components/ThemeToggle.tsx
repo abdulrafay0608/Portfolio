@@ -7,18 +7,19 @@ import { useSyncExternalStore } from 'react';
 
 const emptySubscribe = () => () => {};
 
-export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+export default function ThemeToggle({ compact = false }: { compact?: boolean }) {
+  const { resolvedTheme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   if (!mounted) return null;
 
   return (
     <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2.5 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-black/10 dark:border-white/10 shadow-sm hover:scale-105 transition-all"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      aria-label="Toggle theme"
+      className={`${compact ? 'rounded-md p-2' : 'rounded-full p-2.5'} border border-black/10 bg-white/70 shadow-sm backdrop-blur-md transition-all hover:scale-105 dark:border-white/10 dark:bg-zinc-800/70`}
     >
-      {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-zinc-700" />}
+      {resolvedTheme === 'dark' ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-zinc-700" />}
     </button>
   );
 }
