@@ -4,17 +4,31 @@ import { Providers } from "./providers";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  title: "Abdul Rafay | AI Assistant",
-  description: "A personal AI assistant and portfolio for Abdul Rafay.",
+  title: "Abdul Rafay | AI Engineer & Full Stack MERN Developer",
+  description:
+    "Portfolio of Abdul Rafay — AI Engineer and Full Stack MERN Developer building modern web applications and AI-powered solutions.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
-      <body suppressHydrationWarning className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("font-sans", geist.variable)}
+    >
+      <body
+        suppressHydrationWarning
+        className="bg-white text-zinc-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100"
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

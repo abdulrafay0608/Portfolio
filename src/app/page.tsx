@@ -180,7 +180,7 @@ function PortfolioHome({
               className="object-cover object-top"
               priority
             />
-            <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-zinc-100 dark:ring-zinc-800" />
+            {/* <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-zinc-100 dark:ring-zinc-800" /> */}
           </div>
 
           <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400">

@@ -48,7 +48,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--workspace-sidebar-width",
-      expanded ? "220px" : "80px",
+      expanded ? "200px" : "70px",
     );
   }, [expanded]);
 
@@ -62,7 +62,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
     <>
       <aside
         className={`fixed inset-y-0 left-0 z-30 hidden flex-col border-r border-zinc-200 bg-zinc-50 py-4 text-zinc-900 transition-[width] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] dark:border-white/10 dark:bg-[#111111] dark:text-white lg:flex overflow-hidden ${
-          expanded ? "w-[220px]" : "w-[80px]"
+          expanded ? "w-[200px]" : "w-[70px]"
         }`}
       >
         <div className="flex flex-col gap-3 w-full px-3">
@@ -92,7 +92,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
               className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-zinc-300 bg-zinc-100 text-xs font-black tracking-tight text-[#161616] dark:border-white/15 dark:bg-[#e9e9e9]"
             >
               AR
-              <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-zinc-50 dark:ring-[#111111]" />
+              {/* <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-zinc-50 dark:ring-[#111111]" /> */}
             </a>
 
             <div
@@ -133,21 +133,9 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
         {/* Bottom Section */}
         <div
           className={`flex items-center border-t border-zinc-200 pt-3 dark:border-white/10 transition-all duration-300 ${
-            expanded
-              ? "mx-3 justify-between px-1"
-              : "flex-col gap-3 justify-center"
+            expanded ? "justify-end px-3" : "justify-center"
           }`}
         >
-          <div className="flex items-center gap-2 overflow-hidden">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0 shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
-            <span
-              className={`text-[10px] text-zinc-500 dark:text-white/50 whitespace-nowrap transition-all duration-300 ${
-                expanded ? "opacity-100 max-w-[100px]" : "opacity-0 max-w-0"
-              }`}
-            >
-              Available
-            </span>
-          </div>
           <ThemeToggle compact />
         </div>
       </aside>
@@ -157,7 +145,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
         <div className="flex items-center gap-2 text-xs font-semibold">
           <span className="relative flex h-7 w-7 items-center justify-center rounded-md bg-zinc-100 text-[10px] text-[#161616] dark:bg-[#e9e9e9]">
             AR
-            <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            {/* <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" /> */}
           </span>
           <span>Abdul Rafay</span>
         </div>
