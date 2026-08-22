@@ -4,6 +4,7 @@
 import SplashCursor from "./SplashCursor";
 
 
+
 export default function BackgroundSplash() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
