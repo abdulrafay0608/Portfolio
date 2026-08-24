@@ -8,6 +8,7 @@ import { FileText, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { navItems, aiNavigation } from "@/config/navigation";
 import SidebarItem from "./SidebarItem";
 import ThemeToggle from "./ThemeToggle";
+import { profile } from "@/data/profile";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -34,19 +35,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`
-        fixed inset-y-0 left-0 z-50
-        hidden lg:flex
-        flex-col
-        border-r border-zinc-200
-        bg-white
-        dark:border-white/10
-        dark:bg-[#0d0d0f]
-        transition-[width]
-        duration-300
-        overflow-hidden
-        ${expanded ? "w-55" : "w-18"}
-      `}
+      className={`fixed inset-y-0 left-0 z-50 hidden flex-col overflow-hidden border-r border-zinc-200 transition-[width] duration-300 dark:border-white/10 lg:flex ${expanded ? "w-55" : "w-18"}`}
     >
       {/* Header */}
       <div className="text-right px-4 py-2">
@@ -54,14 +43,7 @@ export default function Sidebar() {
           type="button"
           onClick={() => setExpanded((prev) => !prev)}
           aria-label={expanded ? "Collapse sidebar" : "Expand sidebar"}
-          className="
-            rounded-md p-1.5
-            text-zinc-500
-            hover:bg-zinc-100
-            hover:text-zinc-900
-            dark:hover:bg-white/10
-            dark:hover:text-white
-          "
+          className="rounded-md p-1.5 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-white/10 dark:hover:text-white"
         >
           {expanded ? (
             <PanelLeftClose size={18} />
@@ -78,9 +60,9 @@ export default function Sidebar() {
 
           {expanded && (
             <div className="overflow-hidden whitespace-nowrap">
-              <p className="text-sm font-semibold">Abdul Rafay</p>
+              <p className="text-sm font-semibold">{profile.name}</p>
 
-              <p className="text-[10px] text-zinc-500">AI-Powered Full-Stack</p>
+              <p className="text-[10px] text-zinc-500">{profile.role}</p>
             </div>
           )}
         </Link>
@@ -92,7 +74,10 @@ export default function Sidebar() {
           <SidebarItem
             key={item.href}
             item={item}
-            active={pathname === item.href}
+            active={
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(`${item.href}/`))
+            }
             expanded={expanded}
           />
         ))}
@@ -110,11 +95,15 @@ export default function Sidebar() {
           target="_blank"
           rel="noreferrer"
           title="View CV"
-          aria-label="View Abdul Rafay CV"
+          aria-label={`View ${profile.name} CV`}
           className={`group flex items-center gap-3 rounded-lg p-3 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-950 dark:hover:bg-white/10 dark:hover:text-white ${expanded ? "justify-start" : "justify-center"}`}
         >
           <FileText className="h-5 w-5 shrink-0" />
-          {expanded && <span className="whitespace-nowrap text-sm font-semibold">View CV</span>}
+          {expanded && (
+            <span className="whitespace-nowrap text-sm font-semibold">
+              View CV
+            </span>
+          )}
         </a>
       </nav>
       {/* Theme */}

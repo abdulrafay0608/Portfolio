@@ -1,8 +1,15 @@
+"use client";
+
 import { MessageCircle } from "lucide-react";
 
 import { siteData } from "@/data/site";
+import { usePathname } from "next/navigation";
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+
+  if (pathname === "/chat") return null;
+
   const whatsappNumber = siteData.phone.replace(/^0/, "92");
   const message = encodeURIComponent(
     "Hi Abdul, I would like to discuss a project with you.",

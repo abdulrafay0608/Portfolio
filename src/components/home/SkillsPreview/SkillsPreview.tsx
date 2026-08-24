@@ -1,8 +1,9 @@
-import Link from "next/link";
-import { ArrowRight, Wrench } from "lucide-react";
+import { Wrench } from "lucide-react";
 
 import { skillGroups } from "@/data/skills";
 import SkillGroup from "./SkillGroup";
+import ActionLink from "@/components/ui/ActionLink";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 export default function SkillsPreview() {
 	return (
@@ -13,10 +14,7 @@ export default function SkillsPreview() {
 			<div className="mx-auto max-w-7xl">
 				<div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
 					<div>
-						<div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-sky-600 dark:text-sky-400">
-							<Wrench className="h-3.5 w-3.5" />
-							Capabilities
-						</div>
+						<SectionLabel icon={Wrench}>Capabilities</SectionLabel>
 						<h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-zinc-950 sm:text-4xl dark:text-white">
 							What can he
 							<br />
@@ -42,13 +40,7 @@ export default function SkillsPreview() {
 					))}
 				</div>
 
-				<Link
-					href="/skills"
-					className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-zinc-900 transition-colors hover:text-sky-600 dark:text-white dark:hover:text-sky-400"
-				>
-					Explore the full toolkit
-					<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-				</Link>
+				<ActionLink href="/skills" className="mt-8">Explore the full toolkit</ActionLink>
 			</div>
 		</section>
 	);

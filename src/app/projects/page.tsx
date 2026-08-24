@@ -1,5 +1,5 @@
-import Projects from "@/components/projects/Projects";
+import ProjectExplorer from "@/components/projects/ProjectExplorer";
 
 export default function ProjectsPage() {
-  return <Projects />;
+  return <ProjectExplorer />;
 }

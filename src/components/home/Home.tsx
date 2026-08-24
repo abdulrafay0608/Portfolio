@@ -9,13 +9,7 @@ import FeaturedProjects from "./FeaturedProjects/FeaturedProjects";
 import ExperiencePreview from "./ExperiencePreview/ExperiencePreview";
 import SkillsPreview from "./SkillsPreview/SkillsPreview";
 import ContactCTA from "./ContactCTA/ContactCTA";
-
-const suggestions = [
-  "Tell me about Abdul",
-  "Show me his best projects",
-  "What technologies does he use?",
-  "Why should I work with him?",
-];
+import { heroSuggestions } from "@/data/profile";
 
 export default function Home() {
   const [homeDraft, setHomeDraft] = useState("");
@@ -32,7 +26,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        suggestions={suggestions}
+        suggestions={heroSuggestions}
         draft={homeDraft}
         onDraftChange={setHomeDraft}
         onAsk={openChat}

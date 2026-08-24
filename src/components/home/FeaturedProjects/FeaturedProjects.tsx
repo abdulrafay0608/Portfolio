@@ -1,8 +1,9 @@
-import Link from "next/link";
-import { ArrowRight, FolderKanban } from "lucide-react";
+import { FolderKanban } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
+import ActionLink from "@/components/ui/ActionLink";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 export default function FeaturedProjects() {
   return (
@@ -13,10 +14,7 @@ export default function FeaturedProjects() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-sky-600 dark:text-sky-400">
-              <FolderKanban className="h-3.5 w-3.5" />
-              Selected work
-            </div>
+            <SectionLabel icon={FolderKanban}>Selected work</SectionLabel>
             <h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-zinc-950 sm:text-4xl dark:text-white">
               What has he built?
             </h2>
@@ -40,13 +38,7 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        <Link
-          href="/projects"
-          className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-zinc-900 transition-colors hover:text-sky-600 dark:text-white dark:hover:text-sky-400"
-        >
-          View all projects
-          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-        </Link>
+        <ActionLink href="/projects" className="mt-8">View all projects</ActionLink>
       </div>
     </section>
   );

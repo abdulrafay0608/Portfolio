@@ -4,6 +4,7 @@ import { ArrowLeft, RotateCcw } from "lucide-react";
 import ChatMessage from "./ChatMessage";
 import ChatTypingIndicator from "./ChatTypingIndicator";
 import type { Message } from "./types";
+import { profile } from "@/data/profile";
 
 export const ChatWorkspace = ({
   messages,
@@ -58,7 +59,7 @@ export const ChatWorkspace = ({
             value={draft}
             onChange={onDraftChange}
             onSubmit={onSubmit}
-            placeholder="Ask anything about Abdul Rafay..."
+            placeholder={`Ask anything about ${profile.name}...`}
           />
         </div>
       </div>

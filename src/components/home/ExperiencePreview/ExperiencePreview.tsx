@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { ArrowRight, BriefcaseBusiness, Check } from "lucide-react";
+import { BriefcaseBusiness, Check } from "lucide-react";
 
 import { experience } from "@/data/experience";
+import ActionLink from "@/components/ui/ActionLink";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 export default function ExperiencePreview() {
 	return (
@@ -12,10 +13,7 @@ export default function ExperiencePreview() {
 			<div className="mx-auto max-w-7xl">
 				<div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
 					<div>
-						<div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-sky-600 dark:text-sky-400">
-							<BriefcaseBusiness className="h-3.5 w-3.5" />
-							Experience
-						</div>
+						<SectionLabel icon={BriefcaseBusiness}>Experience</SectionLabel>
 						<h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-zinc-950 sm:text-4xl dark:text-white">
 							Where the work
 							<br />
@@ -39,7 +37,7 @@ export default function ExperiencePreview() {
 					{experience.map((item) => (
 						<article
 							key={`${item.company}-${item.period}`}
-							className="group relative grid gap-6 py-7 transition-colors duration-300 hover:bg-sky-500/[0.03] lg:grid-cols-[1fr_1.5fr] lg:gap-16 lg:px-5"
+							className="group relative grid gap-6 py-7 transition-colors duration-300 hover:bg-sky-500/3 lg:grid-cols-[1fr_1.5fr] lg:gap-16 lg:px-5"
 						>
 							<span className="absolute bottom-0 left-0 top-0 w-0.5 origin-bottom scale-y-0 bg-sky-500 transition-transform duration-300 group-hover:scale-y-100" />
 							<div>
@@ -80,13 +78,7 @@ export default function ExperiencePreview() {
 					))}
 				</div>
 
-				<Link
-					href="/experience"
-					className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-zinc-900 transition-colors hover:text-sky-600 dark:text-white dark:hover:text-sky-400"
-				>
-					View full experience
-					<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-				</Link>
+				<ActionLink href="/experience" className="mt-8">View full experience</ActionLink>
 			</div>
 		</section>
 	);

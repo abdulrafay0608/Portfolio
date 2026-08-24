@@ -1,5 +1,6 @@
 import { Send } from "lucide-react";
 import React, { FormEvent } from "react";
+import { profile } from "@/data/profile";
 
 export const ChatComposer = ({
   inputId,
@@ -20,7 +21,7 @@ export const ChatComposer = ({
       className="mt-9 w-full rounded-2xl border border-zinc-200 bg-white/80 p-2 shadow-xl shadow-zinc-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-900/75"
     >
       <label className="sr-only" htmlFor={inputId}>
-        Ask anything about Abdul Rafay
+        Ask anything about {profile.name}
       </label>
       <div className="flex items-center gap-2">
         <input

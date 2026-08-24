@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 import type { SkillGroup as SkillGroupData } from "@/data/skills";
+import Tag from "@/components/ui/Tag";
 
 type SkillGroupProps = {
 	skillGroup: SkillGroupData;
@@ -25,12 +26,7 @@ export default function SkillGroup({ skillGroup }: SkillGroupProps) {
 
 			<div className="mt-6 flex flex-wrap gap-2">
 				{skillGroup.technologies.map((technology) => (
-					<span
-						key={technology}
-						className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600 dark:bg-white/10 dark:text-zinc-300"
-					>
-						{technology}
-					</span>
+					<Tag key={technology} className="border-0 bg-zinc-100 dark:bg-white/10">{technology}</Tag>
 				))}
 			</div>
 		</article>

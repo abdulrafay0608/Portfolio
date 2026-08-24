@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { profile } from "@/data/profile";
 
 export default function HeroProfile() {
   return (
@@ -39,7 +40,7 @@ export default function HeroProfile() {
       >
         <Image
           src="/images/profile.png"
-          alt="Abdul Rafay"
+          alt={profile.name}
           fill
           priority
           sizes="160px"

@@ -9,7 +9,7 @@ export default function ContactCTA() {
 			id="contact"
 			className="relative mx-auto max-w-7xl px-5 pb-20 pt-20 sm:px-8"
 		>
-			<div className="relative grid gap-10 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-950 p-6 text-white shadow-2xl shadow-zinc-900/10 dark:border-white/10 dark:bg-white/6 sm:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:p-12">
+			<div className="relative grid gap-10 overflow-hidden rounded-lg border border-zinc-200 bg-zinc-950 p-6 text-white shadow-2xl shadow-zinc-900/10 dark:border-white/10 dark:bg-white/6 sm:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:p-12">
 				<div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full border border-sky-400/20" />
 				<div>
 					<div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-sky-300">

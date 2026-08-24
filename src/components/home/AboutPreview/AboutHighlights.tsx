@@ -1,41 +1,20 @@
 import { BrainCircuit, Layers3, Smartphone } from "lucide-react";
+import { aboutPreview } from "@/data/about";
 
-const highlights = [
-  {
-    icon: Layers3,
-    label: "Full-Stack",
-    title: "Web Applications",
-    description:
-      "Building complete applications across frontend, backend, APIs, authentication, databases, and deployment.",
-  },
-  {
-    icon: Smartphone,
-    label: "Product",
-    title: "Web & Mobile",
-    description:
-      "Creating responsive web experiences and mobile applications with a strong focus on usability and interface quality.",
-  },
-  {
-    icon: BrainCircuit,
-    label: "AI Engineering",
-    title: "Intelligent Products",
-    description:
-      "Exploring AI assistants, RAG systems, embeddings, vector databases, and AI-powered product experiences.",
-  },
-];
+const icons = [Layers3, Smartphone, BrainCircuit];
 
 export default function AboutHighlights() {
   return (
     <div className="mt-16 grid gap-4 md:grid-cols-3">
-      {highlights.map((item) => {
-        const Icon = item.icon;
+      {aboutPreview.highlights.map((item, index) => {
+        const Icon = icons[index];
 
         return (
           <article
             key={item.title}
             className="
               group
-              rounded-2xl
+              rounded-lg
               border
               border-zinc-200
               bg-white/50

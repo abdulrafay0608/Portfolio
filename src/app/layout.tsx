@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geist } from "next/font/google";
 
 import { Providers } from "./providers";
 import AppShell from "@/components/layout/AppShell";
+import { profile } from "@/data/profile";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -11,16 +13,13 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Abdul Rafay | AI-Powered Full-Stack Developer",
-  description:
-    "Abdul Rafay is an AI-powered Full-Stack Developer building intelligent web applications and digital products.",
+  title: `${profile.name} | ${profile.role}`,
+  description: `${profile.name} is an ${profile.role} building intelligent web applications and digital products.`,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={geist.variable}>
       <body className="bg-white text-zinc-900 dark:bg-[#0a0a0b] dark:text-zinc-100">

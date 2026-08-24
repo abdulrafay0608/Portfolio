@@ -1,25 +1,36 @@
-export const profile = {
+export type Profile = {
+  name: string;
+  role: string;
+  tagline: string;
+  bio: string;
+  eyebrow: string;
+};
+
+export const profile: Profile = {
   name: "Abdul Rafay",
   role: "AI-Powered Full-Stack Developer",
-  description:
-    "I build intelligent web applications, AI assistants and scalable digital products.",
-};
-
-export const siteData = {
-  name: "Abdul Rafay",
-
-  role: "Full Stack MERN Developer",
-
-  eyebrow: "Software Engineer • AI Enthusiast",
-
+  tagline: "I build intelligent web applications and scalable digital products powered by modern AI and full-stack technologies.",
   bio: "I build scalable web applications, modern digital products, and AI-powered experiences using JavaScript technologies.",
-
-  availability: "Available for opportunities",
-
-  location: "Karachi, Pakistan",
+  eyebrow: "Software Engineer • AI Enthusiast",
 };
 
-export const aboutData = {
+export const heroSuggestions = [
+  "Tell me about Abdul",
+  "Show me his best projects",
+  "What technologies does he use?",
+  "Why should I work with him?",
+] as const;
+
+export type AboutData = {
+  summary: string;
+  approach: string;
+  strengths: string[];
+  education: Array<{ title: string; institution: string; period: string }>;
+  certification: string;
+  certificates: Array<{ title: string; image: string }>;
+};
+
+export const aboutData: AboutData = {
   summary:
     "MERN Stack Developer with hands-on experience building HRMS, payroll, CRM, ticketing, and ERP systems. I work across the full development cycle, from database design and REST APIs to React interfaces and reporting.",
   approach:

@@ -2,7 +2,7 @@ import HeroProfile from "./HeroProfile";
 import HeroContent from "./HeroContent";
 
 type HeroProps = {
-  suggestions: string[];
+  suggestions: readonly string[];
   draft: string;
   onDraftChange: (value: string) => void;
   onAsk: (question: string) => void;

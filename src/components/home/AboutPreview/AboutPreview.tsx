@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
 import AboutHighlights from "./AboutHighlights";
+import { aboutPreview } from "@/data/about";
 
 export default function AboutPreview() {
   return (
@@ -29,9 +30,7 @@ export default function AboutPreview() {
                 dark:text-white
               "
             >
-              Building with code,
-              <br />
-              thinking beyond code.
+              {aboutPreview.title.map((line) => <span key={line} className="block">{line}</span>)}
             </h2>
           </div>
 
@@ -49,9 +48,7 @@ export default function AboutPreview() {
                 dark:text-zinc-100
               "
             >
-              I&apos;m Abdul Rafay, a Full-Stack Developer focused on building
-              modern web applications, digital products, and AI-powered
-              experiences.
+              {aboutPreview.intro}
             </p>
 
             <p
@@ -63,9 +60,7 @@ export default function AboutPreview() {
                 dark:text-zinc-400
               "
             >
-              My work combines full-stack engineering with product thinking. I
-              enjoy turning ideas and real-world problems into interfaces and
-              systems that are useful, scalable, and easy to understand.
+              {aboutPreview.description}
             </p>
 
             <Link
@@ -85,7 +80,7 @@ export default function AboutPreview() {
                 dark:hover:text-sky-400
               "
             >
-              Explore my journey
+              {aboutPreview.linkLabel}
               <ArrowUpRight
                 className="
                   h-4
