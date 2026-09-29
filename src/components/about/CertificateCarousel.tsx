@@ -102,7 +102,7 @@ export default function CertificateCarousel({
         </div>
       </div>
 
-      <div className="hidden gap-3 lg:grid lg:grid-rows-3">
+      {/* <div className="hidden gap-3 lg:grid lg:grid-rows-3">
         {certificates
           .map((certificate, index) => ({ certificate, index }))
           .filter(({ index }) => index !== activeIndex)
@@ -128,7 +128,7 @@ export default function CertificateCarousel({
               </span>
             </button>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 }

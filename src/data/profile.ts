@@ -66,24 +66,24 @@ export const aboutData: AboutData = {
       image: "/certificate/Web And App Development.webp",
     },
     {
-      title: "Designing User Interfaces and Experiences",
-      image: "/certificate/Designing User Interfaces and Experiences.webp",
+      title: "IBM iOS and Android Mobile App Development",
+      image: "/certificate/IBM iOS and Android Mobile.webp",
     },
-    {
-      title: "Introduction to Software Engineering",
-      image: "/certificate/Introduction to Software Engineering.webp",
-    },
-    {
-      title: "HTML, CSS, and Javascript for Web Developers",
-      image: "/certificate/HTML, CSS, and Javascript for Web Developers.webp",
-    },
-    {
-      title: "Introduction to Mobile App Development",
-      image: "/certificate/Introduction to Mobile App Development.webp",
-    },
-    {
-      title: "Get Started with Android App Development",
-      image: "/certificate/Get Started with Android App Development.webp",
-    },
+    // {
+    //   title: "Introduction to Software Engineering",
+    //   image: "/certificate/Introduction to Software Engineering.webp",
+    // },
+    // {
+    //   title: "HTML, CSS, and Javascript for Web Developers",
+    //   image: "/certificate/HTML, CSS, and Javascript for Web Developers.webp",
+    // },
+    // {
+    //   title: "Introduction to Mobile App Development",
+    //   image: "/certificate/Introduction to Mobile App Development.webp",
+    // },
+    // {
+    //   title: "Get Started with Android App Development",
+    //   image: "/certificate/Get Started with Android App Development.webp",
+    // },
   ],
 };
